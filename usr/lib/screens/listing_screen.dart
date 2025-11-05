@@ -35,7 +35,7 @@ class _ListingScreenState extends State<ListingScreen> {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: CircularProgressIndicator());
           } else if (snapshot.hasError) {
-            return Center(child: Text('Error: \\${snapshot.error}'));
+            return Center(child: Text('Error: ${snapshot.error}'));
           }
           final properties = snapshot.data!;
           return ListView.builder(
