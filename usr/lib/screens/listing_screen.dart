@@ -35,7 +35,7 @@ class _ListingScreenState extends State<ListingScreen> {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: CircularProgressIndicator());
           } else if (snapshot.hasError) {
-            return Center(child: Text('Error: ${snapshot.error}'));
+            return Center(child: Text('Error: \\${snapshot.error}'));
           }
           final properties = snapshot.data!;
           return ListView.builder(
@@ -47,7 +47,7 @@ class _ListingScreenState extends State<ListingScreen> {
                 child: ListTile(
                   leading: Image.network(p.imageUrl),
                   title: Text(p.title),
-                  subtitle: Text('${p.location} • \\$${p.price.toStringAsFixed(0)}'),
+                  subtitle: Text('${p.location} • \$${p.price.toStringAsFixed(0)}'),
                   onTap: () {
                     Navigator.pushNamed(context, '/details', arguments: p);
                   },
